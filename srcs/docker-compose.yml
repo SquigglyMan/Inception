@@ -9,7 +9,7 @@ services:
     build:
       dockerfile: ./MariaDB/Dockerfile
 
-  WordPress:
+  wordpress:
     image: Inception-wordpress:tag
     build:
       dockerfile: ./WordPress/Dockerfile

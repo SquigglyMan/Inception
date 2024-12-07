@@ -10,9 +10,6 @@ RUN apt-get update \
 	&& apt-get update \
 	&& apt-get install -y nginx
 
-# Copy the our nginx configutarion file to be used
-COPY ./nginx.conf /etc/nginx/sites-available
-
 # Expose the port used to access
 EXPOSE 80/tcp
 
