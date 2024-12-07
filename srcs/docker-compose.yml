@@ -1,12 +1,21 @@
 services:
   nginx:
+    container_name: nginx
     build:
-      dockerfile: ./NGINX/Dockerfile
+      dockerfile: ./nginx/Dockerfile
+    networks:
+      - network
 
   mariadb:
+    container_name: mariadb
     build:
-      dockerfile: ./MariaDB/Dockerfile
+      dockerfile: ./mariadb/Dockerfile
+    networks:
+      - network
 
   wordpress:
+    container_name: wordpress
     build:
-      dockerfile: ./WordPress/Dockerfile
+      dockerfile: ./wordpress/Dockerfile
+    networks:
+      - network
