@@ -3,4 +3,4 @@ FROM debian:11.11
 
 # install MariaDB
 RUN apt-get update \
-	&& apt install -y mariadb-server mariadb-client
+	&& apt-get install -y mariadb-server mariadb-client

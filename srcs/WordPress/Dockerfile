@@ -3,7 +3,7 @@ FROM debian:11.11
 
 # install PHP and WordPress
 RUN apt-get update \
-	&& install -y php-cgi php-common php-fpm php-mysql \
+	&& apt-get install -y php-cgi php-common php-fpm php-mysql \
 	&& cd /var/www/html/ \
 	&& wget https://wordpress.org/latest.tar.gz \
 	&& tar -xvzf latest.tar.gz \
