@@ -1,4 +1,7 @@
 # docker-compose.yml
 
 services:
-  db:
+  nginx:
+    image: nginx
+    ports:  -8080:80
+    build: ./NGINX
