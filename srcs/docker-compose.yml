@@ -1,9 +1,15 @@
 services:
   nginx:
-    build: ./NGINX
+    image: Inception-nginx:tag
+    build:
+      dockerfile: ./NGINX/Dockerfile
 
   mariadb:
-    build: ./MariaDB
+    image: Inception-mariadb:tag
+    build:
+      dockerfile: ./MariaDB/Dockerfile
 
   WordPress:
-    build: ./WordPress
+    image: Inception-wordpress:tag
+    build:
+      dockerfile: ./WordPress/Dockerfile

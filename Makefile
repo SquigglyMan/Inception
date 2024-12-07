@@ -6,11 +6,11 @@
 #    By: llarue <llarue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 14:14:51 by llarue            #+#    #+#              #
-#    Updated: 2024/12/06 19:57:56 by llarue           ###   ########.fr        #
+#    Updated: 2024/12/07 13:01:33 by llarue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	docker compose -f ./srcs/docker-compose.yml up 
+	docker compose --file ./srcs/docker-compose.yml --detach up 
 
 .PHONY:	all
