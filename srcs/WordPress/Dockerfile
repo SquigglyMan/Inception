@@ -4,6 +4,7 @@ FROM debian:11.11
 # install PHP and WordPress
 RUN apt-get update \
 	&& apt-get install -y php-cgi php-common php-fpm php-mysql \
+	&& mkdir /var/www/ \
 	&& mkdir /var/www/html \
 	&& cd /var/www/html/ \
 	&& wget https://wordpress.org/latest.tar.gz \
