@@ -1,12 +1,9 @@
 services:
   nginx:
-    image: nginx
     build: ./NGINX
 
   mariadb:
-    image: mariadb
     build: ./MariaDB
 
   WordPress:
-    image: wordpress
     build: ./WordPress
