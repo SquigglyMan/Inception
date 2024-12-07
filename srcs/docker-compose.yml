@@ -4,9 +4,9 @@ services:
     build: ./NGINX
 
   mariadb:
-    image: mariaDB
+    image: mariadb
     build: ./MariaDB
 
   WordPress:
-    image: WordPress
+    image: wordpress
     build: ./WordPress
