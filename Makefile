@@ -6,7 +6,7 @@
 #    By: llarue <llarue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 14:14:51 by llarue            #+#    #+#              #
-#    Updated: 2024/12/07 17:26:49 by llarue           ###   ########.fr        #
+#    Updated: 2024/12/07 18:28:30 by llarue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,10 @@ all:
 clean:
 	docker compose --file ./srcs/docker-compose.yml down
 
-fclean:
-	docker stop; $$(docker ps -qa);				\
-	docker rm; $$(docker ps -qa);				\
-	docker rmi -f; $$(docker images -qa);		\
-	docker volume rm $$(docker volume ls -q);	\
-	docker network rm $$(docker network ls -q);	\
-
 re:
-	docker compose --file ./srcs/docker-compose.yml up --build
+	docker compose --file ./srcs/docker-compose.yml up --build --detach
 
-.PHONY:	all										\
-		clean									\
-		fclean									\
+.PHONY:	all		\
+		clean	\
+		fclean	\
 		re
