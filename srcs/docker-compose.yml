@@ -1,23 +1,14 @@
 services:
   nginx:
     container_name: "nginx"
-    build:
-      context: ./
-      dockerfile: ./requirements/nginx/Dockerfile
+    build: ./requirements/nginx
     ports:
       - "443:443"
-    restart: always
 
   mariadb:
     container_name: "mariadb"
-    build:
-      context: ./
-      dockerfile: ./requirements/mariadb/Dockerfile
-    restart: always
+    build: ./requirements/mariadb/
 
   wordpress:
     container_name: "wordpress"
-    build:
-      context: ./
-      dockerfile: ./requirements/wordpress/Dockerfile
-    restart: always
+    build: ./requirements/wordpress/

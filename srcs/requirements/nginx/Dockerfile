@@ -15,7 +15,7 @@ RUN apt-get install -y openssl \
 	&& mkdir /etc/nginx/ssl
 
 # Copy our nginx configuration file to run
-COPY ./requirements/nginx/conf/nginx.conf /etc/nginx/conf.d
+COPY ./conf/nginx.conf /etc/nginx/conf.d
 
 # Expose the port used to access
 EXPOSE 443
