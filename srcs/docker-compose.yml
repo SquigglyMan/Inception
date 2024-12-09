@@ -3,6 +3,8 @@ services:
     container_name: nginx
     build:
       dockerfile: ./nginx/Dockerfile
+    ports:
+      - 8080:8080
 
   mariadb:
     container_name: mariadb
