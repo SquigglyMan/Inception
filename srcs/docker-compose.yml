@@ -7,7 +7,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - ./nginx:./requirements/nginx/conf/
+      - wordpress_data:/var/www/html
     restart: always
 
   mariadb:
@@ -22,6 +22,6 @@ services:
     build:
       context: ./
       dockerfile: ./requirements/wordpress/Dockerfile
-      volumes:
-      - ./nginx:./requirements/nginx/conf/
+    volumes:
+      - wordpress_data:/var/www/html
     restart: always
