@@ -3,7 +3,7 @@ services:
     container_name: "nginx"
     build:
       context: ./
-      dockerfile: ./srcs/requirements/nginx/Dockerfile
+      dockerfile: ./requirements/nginx/Dockerfile
     ports:
       - 8080:8080
     restart: always
@@ -12,12 +12,12 @@ services:
     container_name: "mariadb"
     build:
       context: ./
-      dockerfile: ./srcs/requirements/mariadb/Dockerfile
+      dockerfile: ./requirements/mariadb/Dockerfile
     restart: always
 
   wordpress:
     container_name: "wordpress"
     build:
       context: ./
-      dockerfile: ./srcs/requirements/wordpress/Dockerfile
+      dockerfile: ./requirements/wordpress/Dockerfile
     restart: always
