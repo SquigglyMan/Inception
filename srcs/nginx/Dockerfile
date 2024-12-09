@@ -14,6 +14,8 @@ RUN apt-get update \
 RUN apt-get install -y openssl \
 	&& mkdir /etc/nginx/ssl
 
+FROM nginx
+
 # Copy our nginx configuration file to run
 COPY ./nginx.conf /etc/nginx/conf.d
 
