@@ -4,6 +4,8 @@ services:
     build: ./requirements/nginx
     ports:
       - "443:443"
+    volumes:
+      - ./nginx:/var/www/html
 
   mariadb:
     container_name: "mariadb"
@@ -12,3 +14,5 @@ services:
   wordpress:
     container_name: "wordpress"
     build: ./requirements/wordpress/
+    volumes:
+      - ./nginx:/var/www/html
