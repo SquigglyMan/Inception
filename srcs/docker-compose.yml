@@ -6,15 +6,18 @@ services:
       dockerfile: ./nginx/Dockerfile
     ports:
       - 8080:8080
+    restart: always
 
   mariadb:
     container_name: "mariadb"
     build:
       context: ./
       dockerfile: ./mariadb/Dockerfile
+    restart: always
 
   wordpress:
     container_name: "wordpress"
     build:
       context: ./
       dockerfile: ./wordpress/Dockerfile
+    restart: always

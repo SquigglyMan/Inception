@@ -1,5 +1,5 @@
 # Pull the minimal debian image from version 11.11 Bullseye
-FROM debian:11.11
+FROM debian:bullseye
 
 # install nginx
 RUN apt-get update \
@@ -15,7 +15,7 @@ RUN apt-get install -y openssl \
 	&& mkdir /etc/nginx/ssl
 
 # Copy our nginx configuration file to run
-COPY ./nginx.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d
 
 # Expose the port used to access
 EXPOSE 8080
