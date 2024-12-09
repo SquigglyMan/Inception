@@ -1,6 +1,8 @@
 # Pull the minimal debian image from version 11.11 Bullseye
 FROM debian:bullseye
 
+WORKDIR /nginx
+
 # install nginx
 RUN apt-get update \
 	&& apt-get install -y curl gnupg2 ca-certificates lsb-release debian-archive-keyring \
@@ -14,13 +16,11 @@ RUN apt-get update \
 RUN apt-get install -y openssl \
 	&& mkdir /etc/nginx/ssl
 
-FROM nginx
-
 # Copy our nginx configuration file to run
 COPY ./nginx.conf /etc/nginx/conf.d
 
 # Expose the port used to access
-EXPOSE 8080
+EXPOSE 443
 
 # Run the nginx on server
 CMD ["nginx", "-g", "daemon off;"]
