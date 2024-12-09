@@ -4,6 +4,8 @@ services:
     build:
       context: ./
       dockerfile: ./requirements/nginx/Dockerfile
+    volumes:
+      - wordpress_data:/var/www/html
     ports:
       - 8080:8080
     restart: always
@@ -13,6 +15,8 @@ services:
     build:
       context: ./
       dockerfile: ./requirements/mariadb/Dockerfile
+    volumes:
+      - mariadb_data:/var/lib/mysql
     restart: always
 
   wordpress:
@@ -20,4 +24,6 @@ services:
     build:
       context: ./
       dockerfile: ./requirements/wordpress/Dockerfile
+    volumes:
+      - wordpress_data:/var/www/html
     restart: always
