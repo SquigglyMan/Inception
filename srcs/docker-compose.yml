@@ -6,6 +6,8 @@ services:
       dockerfile: ./requirements/nginx/Dockerfile
     ports:
       - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
     restart: always
 
   mariadb:
