@@ -1,5 +1,5 @@
 # Pull the minimal debian image from version 11.11 Bullseye
-FROM debian:11.11
+FROM debian:bullseye
 
 # install PHP and WordPress
 RUN apt-get update \
