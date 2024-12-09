@@ -1,17 +1,20 @@
 services:
   nginx:
-    container_name: nginx
+    container_name: "nginx"
     build:
+      context: ./nginx/
       dockerfile: ./nginx/Dockerfile
     ports:
       - 8080:8080
 
   mariadb:
-    container_name: mariadb
+    container_name: "mariadb"
     build:
+      context: ./mariadb/
       dockerfile: ./mariadb/Dockerfile
 
   wordpress:
-    container_name: wordpress
+    container_name: "wordpress"
     build:
+      context: ./wordpress/
       dockerfile: ./wordpress/Dockerfile
