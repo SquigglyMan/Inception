@@ -5,7 +5,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - ./nginx:/usr/share/nginx/html
+      - ./nginx:/var/www/html
 
 #   mariadb:
 #     container_name: "mariadb"
