@@ -14,10 +14,13 @@ RUN apt-get update \
 RUN apt-get install -y openssl \
 	&& mkdir /etc/nginx/ssl
 
+RUN openssl req -x509 -days 365 -nodes -newkey rsa:4096 \
+	-keyout /etc/ssl/private/nginx.key \
+	-out /etc/ssl/certs/nginx.crt -sha256 -subj "/CN=llarue.42.fr"
 # Copy our nginx configuration file to run
 COPY ./conf/nginx.conf /etc/nginx/conf.d
 
-# Expose the port used to access
+# Open the port used to access
 EXPOSE 443
 
 # Run the nginx on server
