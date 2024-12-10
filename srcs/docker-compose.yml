@@ -7,12 +7,12 @@ services:
     volumes:
       - ./nginx:/usr/share/nginx/html
 
-  mariadb:
-    container_name: "mariadb"
-    build: ./requirements/mariadb/
+#   mariadb:
+#     container_name: "mariadb"
+#     build: ./requirements/mariadb/
 
-  wordpress:
-    container_name: "wordpress"
-    build: ./requirements/wordpress/
-    volumes:
-      - ./nginx:/var/www/html
+#   wordpress:
+#     container_name: "wordpress"
+#     build: ./requirements/wordpress/
+#     volumes:
+#       - ./nginx:/var/www/html
