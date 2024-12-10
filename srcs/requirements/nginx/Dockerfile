@@ -18,7 +18,7 @@ RUN apt-get install -y openssl \
 COPY ./conf/nginx.conf /etc/nginx/conf.d
 
 # Expose the port used to access
-EXPOSE 80
+EXPOSE 443
 
 # Run the nginx on server
 CMD ["nginx", "-g", "daemon off;"]
