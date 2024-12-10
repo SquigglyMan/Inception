@@ -12,7 +12,9 @@ RUN apt-get update \
 
 # install SSL
 RUN apt-get install -y openssl \
-	&& mkdir /etc/nginx/ssl
+	&& mkdir /etc/nginx/ssl \
+	&& mkdir /etc/nginx/ssl/certs \
+	&& mkdir /etc/nginx/ssl/private
 
 RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
 	-out /etc/nginx/ssl/certs/nginx.crt \
