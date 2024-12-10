@@ -5,7 +5,8 @@ FROM debian:bullseye
 RUN apt-get update \
 	&& apt-get install -y mariadb-server mariadb-client
 
-RUN mkdir -p /var/run/mysql \
+RUN mkdir -p /var/run \
+	&& mkdir -p /var/run/mysql \
 	&& chown -R mysql::mysql /var/run/mysql \
 	&& chmod 777 /var/run/mysql
 # Open the port used to access
