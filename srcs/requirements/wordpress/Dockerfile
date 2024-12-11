@@ -10,3 +10,5 @@ RUN apt-get update \
 	&& wget https://wordpress.org/latest.tar.gz \
 	&& tar -xvzf latest.tar.gz \
 	&& rm -rf latest.tar.gz
+
+CMD ["yes"]
