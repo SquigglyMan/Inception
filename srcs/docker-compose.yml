@@ -33,6 +33,14 @@ services:
     networks:
       - inception
 
+volmues:
+  nginx:
+    driver: local
+  mariadb:
+    driver: local
+  wordpress:
+    driver: local
+
 networks:
   inception:
     driver: bridge
@@ -56,7 +64,3 @@ secrets:
   #   file: ../secrets/wp_password.txt
   # my_wp_email:
   #   file: ../secrets/wp_email.txt
-  # my_graf_passwd:
-  #   file: ../secrets/graf_password.txt
-  # my_graf_admin:
-  #   file: ../secrets/graf_admin.txt
