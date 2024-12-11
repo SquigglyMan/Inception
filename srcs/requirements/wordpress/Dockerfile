@@ -5,7 +5,7 @@ FROM debian:bullseye
 RUN apt-get update \
 	&& apt-get install -y php-fpm php-mysql curl \
 	&& mkdir /var/www/ \
-	&& mkdir /var/www/html \
+	&& mkdir /var/www/html
 
 COPY ./tools/start_myphp.sh ./start_myphp.sh
 RUN chmod +x ./start_myphp.sh
