@@ -7,8 +7,8 @@ RUN apt-get update \
 
 RUN mkdir -p /var/run \
 	&& mkdir -p /var/run/mysql \
-	# && chown -R mysql::mysql /var/run/mysql \
-	# && chmod 777 /var/run/mysql
+	&& chown -R mysql::mysql /var/run/mysql \
+	&& chmod 777 /var/run/mysql
 # Open the port used to access
 EXPOSE 3306
 
@@ -17,6 +17,7 @@ COPY ./tools/mariadb.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/mariadb.sh
 # RUN chmod +x /usr/local/bin/wordpress.sql
 
+CMD ["y"]
 # ENTRYPOINT [ "/usr/local/bin/mariadb.sh" ]
 
 # CMD ["mysqld", "--bind-address=0.0.0.0"]
