@@ -13,7 +13,7 @@ RUN mkdir -p /var/run \
 # Open the port used to access
 EXPOSE 3306
 
-COPY ./tools/mariadb.sh /usr/local/bin/
+COPY ./tools/start_mysql.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/mariadb.sh
 
 CMD ["yes"]
