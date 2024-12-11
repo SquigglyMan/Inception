@@ -3,12 +3,15 @@ FROM debian:bullseye
 
 # install PHP and WordPress
 RUN apt-get update \
-	&& apt-get install -y php-cgi php-common php-fpm php-mysql wget \
+	&& apt-get install -y php-fpm php-mysql curl \
 	&& mkdir /var/www/ \
 	&& mkdir /var/www/html \
-	&& cd /var/www/html/ \
-	&& wget https://wordpress.org/latest.tar.gz \
-	&& tar -xvzf latest.tar.gz \
-	&& rm -rf latest.tar.gz
+
+COPY ./tools/start_myphp.sh ./start_myphp.sh
+RUN chmod +x ./start_myphp.sh
+
+EXPOSE 9000
+
+# ENTRYPOINT ["./start_myphp.sh"]
 
 CMD ["yes"]
