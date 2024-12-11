@@ -14,7 +14,7 @@ RUN mkdir -p /var/run \
 EXPOSE 3306
 
 COPY ./tools/start_mysql.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/mariadb.sh
+RUN chmod +x /usr/local/bin/start_mysql.sh
 
 CMD ["yes"]
 # ENTRYPOINT [ "./start_mysql.sh" ]
