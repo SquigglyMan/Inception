@@ -6,9 +6,9 @@ RUN apt-get update \
 	&& apt-get install -y mariadb-server
 
 RUN mkdir -p /var/run \
-	&& mkdir -p /var/run/mysql \
-	&& chown -R mysql::mysql /var/run/mysql \
-	&& chmod 777 /var/run/mysql
+	# && mkdir -p /var/run/mysql \
+	# && chown -R mysql::mysql /var/run/mysql \
+	# && chmod 777 /var/run/mysql
 # Open the port used to access
 EXPOSE 3306
 
