@@ -22,8 +22,7 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
 	-subj "/C=FR/ST=Paris/L=Paris/0=42 School/0U=llarue/CN=llarue.42.fr"
 
 # Copy our nginx configuration file to run
-COPY ./conf/nginx.conf /etc/nginx/conf.d
-
+COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 # Open the port used to access
 EXPOSE 443
 
