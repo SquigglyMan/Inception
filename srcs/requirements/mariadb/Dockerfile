@@ -6,7 +6,7 @@ RUN apt-get update \
 	&& apt-get install -y mariadb-server
 
 RUN mkdir -p /var/run \
-	# && mkdir -p /var/run/mysql \
+	&& mkdir -p /var/run/mysql \
 	# && chown -R mysql::mysql /var/run/mysql \
 	# && chmod 777 /var/run/mysql
 # Open the port used to access
@@ -17,7 +17,7 @@ COPY ./tools/mariadb.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/mariadb.sh
 # RUN chmod +x /usr/local/bin/wordpress.sql
 
-CMD ["y"]
+CMD ["yes"]
 # ENTRYPOINT [ "/usr/local/bin/mariadb.sh" ]
 
 # CMD ["mysqld", "--bind-address=0.0.0.0"]
