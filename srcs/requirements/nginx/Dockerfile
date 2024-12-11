@@ -19,7 +19,7 @@ RUN apt-get install -y openssl \
 RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
 	-out /etc/nginx/ssl/certs/nginx.crt \
 	-keyout /etc/nginx/ssl/private/nginx.key \
-	-subj "/CN=llarue.42.fr"
+	-subj "/C=FR/ST=Paris/L=Paris/0=42 School/0U=llarue/CN=llarue.42.fr"
 
 # Copy our nginx configuration file to run
 COPY ./conf/nginx.conf /etc/nginx/conf.d

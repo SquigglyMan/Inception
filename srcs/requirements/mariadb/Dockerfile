@@ -3,7 +3,7 @@ FROM debian:bullseye
 
 # install MariaDB
 RUN apt-get update \
-	&& apt-get install -y mariadb-server mariadb-client
+	&& apt-get install -y mariadb-server
 
 RUN mkdir -p /var/run \
 	&& mkdir -p /var/run/mysql \
