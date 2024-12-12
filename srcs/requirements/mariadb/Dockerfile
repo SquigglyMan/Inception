@@ -18,7 +18,7 @@ RUN chmod +x /usr/local/bin/start_mysql.sh
 
 ENTRYPOINT ["usr/local/bin/start_mysql.sh"]
 
-CMD [ "tail", "-l", "/dev/null" ]
+CMD [ "tail", "-n", "/dev/null" ]
 # ENTRYPOINT [ "./start_mysql.sh" ]
 
 # CMD ["mysqld", "--bind-address=0.0.0.0"]
