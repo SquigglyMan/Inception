@@ -12,8 +12,8 @@ services:
   mariadb:
     # container_name: "mariadb"
     build: ./requirements/mariadb/
-    # volumes:
-    #   - ./mariadb:/var/lib/mysql
+    volumes:
+      - ./mariadb:/var/lib/mysql
     # ports:
     #   - "3306:3306"
     # env_file: .env
@@ -32,13 +32,17 @@ services:
   #   networks:
   #     - inception
 
-# volmues:
+volmues:
 #   nginx:
-#     driver: local
-#   mariadb:
-#     driver: local
+    # driver: local
+  mariadb:
+   driver: local
+   driver_opts:
+    type: none
+    o: bind
+    device: /home/llarue/data/mariadb
 #   wordpress:
-#     driver: local
+    # driver: local
 
 networks:
   inception:
