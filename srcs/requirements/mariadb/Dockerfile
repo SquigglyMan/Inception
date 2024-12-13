@@ -18,7 +18,7 @@ EXPOSE 3306
 
 # ENTRYPOINT ["usr/local/bin/start_mysql.sh"]
 
-CMD [ "service", "mariadb", "start" ]
+CMD [ "sleep", "infinity" ]
 
 # ENTRYPOINT [ "./start_mysql.sh" ]
 
