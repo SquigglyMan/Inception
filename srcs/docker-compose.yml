@@ -32,7 +32,7 @@ services:
   #   networks:
   #     - inception
 
-volmues:
+volumes:
 #   nginx:
     # driver: local
   mariadb:
