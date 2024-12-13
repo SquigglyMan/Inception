@@ -11,7 +11,7 @@ RUN apt-get update \
 # 	&& chmod 777 /var/run/mysql
 
 # Open the port used to access
-EXPOSE 3306
+# EXPOSE 3306
 
 # COPY ./tools/start_mysql.sh /usr/local/bin/
 # RUN chmod +x /usr/local/bin/start_mysql.sh
