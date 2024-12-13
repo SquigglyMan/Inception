@@ -6,11 +6,12 @@
 #    By: llarue <llarue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 14:14:51 by llarue            #+#    #+#              #
-#    Updated: 2024/12/13 23:17:27 by llarue           ###   ########.fr        #
+#    Updated: 2024/12/14 00:16:51 by llarue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
+	echo "HOME=$(HOME)" >> ./srcs/.env
 	mkdir -p $(HOME)/data/mariadb
 	docker compose --file ./srcs/docker-compose.yml up --detach
 
