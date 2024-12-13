@@ -14,15 +14,15 @@ services:
     build: ./requirements/mariadb/
     volumes:
       - ./mariadb:/var/lib/mysql
-    ports:
-      - "3306:3306"
-    env_file: .env
+    # ports:
+    #   - "3306:3306"
+    # env_file: .env
     # secrets:
     #   - my_db_user
     #   - my_db_password
     #   - my_db_root_password
-    networks:
-      - inception
+    # networks:
+    #   - inception
 
   # wordpress:
   #   container_name: "wordpress"
