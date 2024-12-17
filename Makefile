@@ -6,7 +6,7 @@
 #    By: llarue <llarue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 14:14:51 by llarue            #+#    #+#              #
-#    Updated: 2024/12/14 02:06:47 by llarue           ###   ########.fr        #
+#    Updated: 2024/12/17 11:35:54 by llarue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,17 +22,19 @@ fclean: delete_directories delete_added_environment
 
 re: fclean all
 
-# make_directory:
-# 	@ mkdir -p /home/$(SUDO_USER)/data/mariadb
+make_directory:
+	@ mkdir -p /home/llarue/data/mariadb
+# 	@ mkdir -p /home/llarue/data/wordpress
 
 # create_environment:
-# 	@ echo "USER=$(SUDO_USER)" >> ./srcs/.env
+# 	@ echo "USER=llarue" >> ./srcs/.env
 
-# delete_directories:
-# 	@ rm -rf /home/$(SUDO_USER)/data/mariadb
+delete_directories:
+	@ rm -rf /home/llarue/data/mariadb
+# 	@ rm -rf /home/llarue/data/wordpress
 
 # delete_added_environment:
-# 	@ sed -i '/USER=$(SUDO_USER)/d' ./srcs/.env
+	# @ sed -i '/USER=llarue/d' ./srcs/.env
 	
 .PHONY:	all							\
 		down						\
