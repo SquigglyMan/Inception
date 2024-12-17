@@ -10,7 +10,7 @@ RUN mkdir -p /var/run/mysql \
 	&& chown -R mysql:mysql /var/run/mysql \
 	&& chmod 777 /var/run/mysql
 
-# Open the port used to access
+# Only informative, the ports are opened in the docker-compose
 EXPOSE 3306
 
 COPY ./tools/start_mysql.sh /usr/local/bin/

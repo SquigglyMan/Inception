@@ -10,8 +10,9 @@ RUN apt-get update \
 COPY ./tools/start_myphp.sh ./start_myphp.sh
 RUN chmod +x ./start_myphp.sh
 
+# Only informative, the ports are opened in the docker-compose
 EXPOSE 9000
 
 # ENTRYPOINT ["./start_myphp.sh"]
 
-CMD ["yes"]
+CMD [ "sleep", "infinity" ]

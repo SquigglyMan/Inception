@@ -12,18 +12,17 @@ RUN apt-get update \
 
 # install SSL
 RUN apt-get install -y openssl \
-	&& mkdir /etc/nginx/ssl \
-	&& mkdir /etc/nginx/ssl/certs \
-	&& mkdir /etc/nginx/ssl/private
+	&& mkdir -p /etc/nginx/ssl
 
 RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
-	-out /etc/nginx/ssl/certs/nginx.crt \
-	-keyout /etc/nginx/ssl/private/nginx.key \
+	-out /etc/nginx/ssl/nginx.crt \
+	-keyout /etc/nginx/ssl/nginx.key \
 	-subj "/C=FR/ST=Paris/L=Paris/0=42 School/0U=llarue/CN=llarue.42.fr"
 
 # Copy our nginx configuration file to run
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
-# Open the port used to access
+
+# Only informative, the ports are opened in the docker-compose
 EXPOSE 443
 
 # Run the nginx on server

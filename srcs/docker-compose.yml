@@ -2,19 +2,19 @@ services:
 #   nginx:
 #     container_name: "nginx"
 #     build: ./requirements/nginx
-#     ports:
-#       - "443:443"
+#     expose:
+#       - "443"
 #     volumes:
 #       - ./nginx:/var/www/html
 #     networks:
-#       - inception
+#       - inception-network
 
   mariadb:
     container_name: "mariadb"
     build: ./requirements/mariadb/
     volumes:
       - mariadb:/var/lib/mysql
-    ports:
+    expose:
       - "3306"
     env_file: .env
     # secrets:
@@ -22,15 +22,17 @@ services:
     #   - my_db_password
     #   - my_db_root_password
     networks:
-      - inception
+      - inception-network
 
   # wordpress:
   #   container_name: "wordpress"
   #   build: ./requirements/wordpress/
   #   volumes:
   #     - ./nginx:/var/www/html
+  #     expose:
+  #      - "9000"
   #   networks:
-  #     - inception
+  #     - inception-network
 
 volumes:
 #   nginx:
@@ -45,7 +47,7 @@ volumes:
     # driver: local
 
 networks:
-  inception:
+  inception-network:
     driver: bridge
 
 # secrets:
