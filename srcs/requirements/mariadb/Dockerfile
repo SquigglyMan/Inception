@@ -6,9 +6,9 @@ RUN apt-get update \
 	&& apt-get install -y mariadb-server
 
 
-RUN mkdir -p /var/run/mysql \
-	&& chown -R mysql:mysql /var/run/mysql \
-	&& chmod 777 /var/run/mysql
+# RUN mkdir -p /var/run/mysql \
+# 	&& chown -R mysql:mysql /var/run/mysql \
+# 	&& chmod 777 /var/run/mysql
 
 # Only informative, the ports are opened in the docker-compose
 EXPOSE 3306
@@ -16,8 +16,4 @@ EXPOSE 3306
 COPY ./tools/start_mysql.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/start_mysql.sh
 
-# ENTRYPOINT ["usr/local/bin/start_mysql.sh"]
-
-CMD [ "sleep", "infinity" ]
-
-# CMD ["mysqld", "--bind-address=0.0.0.0"]
+ENTRYPOINT ["usr/local/bin/start_mysql.sh"]
