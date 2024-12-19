@@ -4,7 +4,8 @@ FROM debian:bullseye
 # install PHP and WordPress
 RUN apt-get update \
 	&& apt-get install -y php-fpm php-mysql curl \
-	&& mkdir -p /var/www/html/wordpress
+	&& mkdir -p /var/www/html/wordpress \
+	&& mkdir -p /run/php
 
 COPY ./tools/start_myphp.sh /usr/local/bin//start_myphp.sh
 RUN chmod +x ./usr/local/bin//start_myphp.sh

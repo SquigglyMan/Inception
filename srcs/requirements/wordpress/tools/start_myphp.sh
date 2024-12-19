@@ -10,5 +10,6 @@ sed -i 's/listen\s*=\s*\/run\/php\/php7.4-fpm.sock/listen = 0.0.0.0:9000/' /etc/
 wp core download --allow-root --path=/var/www/html/wordpress --quiet
 wp config create --dbname=${MYSQL_DATABASE} --dbuser=${MYSQL_USER} --dbpass=${MYSQL_PASSWORD}
 wp core install --allow-root --path=/var/www/html/wordpress --url"=https://$DOMAIN_NAME" --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL
+wp theme install astra --activate --allow-root
 
-# php-fpm7.4
+php-fpm7.4 -F
