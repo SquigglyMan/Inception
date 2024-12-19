@@ -26,4 +26,4 @@ COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 443
 
 # Run the nginx on server
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "nginx", "-g", "daemon off;" ]
