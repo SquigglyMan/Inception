@@ -1,13 +1,14 @@
 services:
-#   nginx:
-#     container_name: "nginx"
-#     build: ./requirements/nginx
-#     expose:
-#       - "443"
-#     volumes:
-#       - ./nginx:/var/www/html
-#     networks:
-#       - inception-network
+  nginx:
+    container_name: "nginx"
+    build: ./requirements/nginx
+    expose:
+      - "443"
+    volumes:
+      - ./nginx:/var/www/html/wordpress
+    networks:
+      - inception-network
+    restart: on-failure
 
   mariadb:
     container_name: "mariadb"
@@ -23,32 +24,44 @@ services:
     #   - my_db_root_password
     networks:
       - inception-network
+    restart: on-failure
 
-  # wordpress:
-  #   container_name: "wordpress"
-  #   build: ./requirements/wordpress/
-  #   volumes:
-  #     - ./nginx:/var/www/html
-  #     expose:
-  #      - "9000"
-  #   networks:
-  #     - inception-network
+  wordpress:
+    container_name: "wordpress"
+    build: ./requirements/wordpress/
+    volumes:
+      - ./nginx:/var/www/html/wordpress
+      expose:
+       - "9000"
+    networks:
+      - inception-network
+    depends_on:
+      - mariadb
+    restart: on-failure
 
 volumes:
-#   nginx:
-    # driver: local
+  nginx:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/llarue/data/wordpress
   mariadb:
    driver: local
    driver_opts:
     type: none
     o: bind
     device: /home/llarue/data/mariadb
-#   wordpress:
-    # driver: local
+  wordpress:
+    driver: local
 
 networks:
   inception-network:
     driver: bridge
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/llarue/data/wordpress
 
 # secrets:
 #   my_db_user:
