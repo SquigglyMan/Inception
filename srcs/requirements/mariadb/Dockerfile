@@ -16,5 +16,4 @@ EXPOSE 3306
 COPY ./tools/start_mysql.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/start_mysql.sh
 
-CMD [ "sleep", "infinity" ]
-# ENTRYPOINT [ "usr/local/bin/start_mysql.sh" ]
+ENTRYPOINT [ "usr/local/bin/start_mysql.sh" ]
