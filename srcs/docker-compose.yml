@@ -8,7 +8,7 @@ services:
       - ./nginx:/var/www/html/wordpress
     networks:
       - inception-network
-    restart: on-failure
+    # restart: on-failure
 
   mariadb:
     container_name: "mariadb"
@@ -24,7 +24,7 @@ services:
     #   - my_db_root_password
     networks:
       - inception-network
-    restart: on-failure
+    # restart: on-failure
 
   wordpress:
     container_name: "wordpress"
@@ -37,7 +37,7 @@ services:
       - inception-network
     depends_on:
       - mariadb
-    restart: on-failure
+    # restart: on-failure
 
 volumes:
   nginx:
