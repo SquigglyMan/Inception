@@ -6,7 +6,7 @@
 #    By: llarue <llarue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 14:14:51 by llarue            #+#    #+#              #
-#    Updated: 2024/12/17 16:50:19 by llarue           ###   ########.fr        #
+#    Updated: 2024/12/19 08:52:40 by llarue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ fclean: remove_directories
 	docker compose --file ./srcs/docker-compose.yml down
 	docker system prune -a --force
 
-re: fclean all
+re: fclean
+	docker compose --file ./srcs/docker-compose.yml up --build --detach
 
 make_directory:
 	@ mkdir -p /home/llarue/data/mariadb
