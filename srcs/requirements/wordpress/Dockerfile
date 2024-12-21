@@ -13,5 +13,6 @@ RUN chmod +x ./usr/local/bin//start_myphp.sh
 # Only informative, the ports are opened in the docker-compose
 EXPOSE 9000
 
-CMD [ "sleep", "infinity" ]
-# ENTRYPOINT [ "/usr/local/bin/start_myphp.sh" ]
+# CMD [ "sleep", "infinity" ]
+
+ENTRYPOINT [ "/usr/local/bin/start_myphp.sh" ]

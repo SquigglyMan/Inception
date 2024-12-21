@@ -6,7 +6,7 @@
 #    By: llarue <llarue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 14:14:51 by llarue            #+#    #+#              #
-#    Updated: 2024/12/19 12:15:47 by llarue           ###   ########.fr        #
+#    Updated: 2024/12/21 12:43:38 by llarue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,7 @@ make_directory:
 
 
 remove_directories:
-	@ rm -rf /home/llarue/data/mariadb
-	@ rm -rf /home/llarue/data/wordpress
+	@ rm -rf /home/llarue/data/*
 	
 .PHONY:	all							\
 		down						\
