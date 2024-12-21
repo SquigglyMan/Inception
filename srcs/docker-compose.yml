@@ -5,7 +5,7 @@ services:
     expose:
       - "443"
     volumes:
-      - ./nginx:/var/www/html/wordpress
+      - wordpress:/var/www/html/wordpress
     networks:
       - inception-network
 
@@ -24,7 +24,7 @@ services:
     container_name: "wordpress"
     build: ./requirements/wordpress/
     volumes:
-      - ./nginx:/var/www/html/wordpress
+      - wordpress:/var/www/html/wordpress
     env_file : .env
     expose:
        - "9000"
@@ -34,12 +34,6 @@ services:
       - mariadb
 
 volumes:
-  nginx:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/llarue/data/wordpress
   mariadb:
    driver: local
    driver_opts:
