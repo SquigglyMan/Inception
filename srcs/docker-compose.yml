@@ -2,20 +2,24 @@ services:
   nginx:
     container_name: "nginx"
     build: ./requirements/nginx
+    image: nginx:inception
     expose:
       - "443"
     volumes:
       - wordpress:/var/www/html/wordpress
+    restart: unless-stopped
     networks:
       - inception-network
 
   mariadb:
     container_name: "mariadb"
     build: ./requirements/mariadb/
+    image: mariadb:inception
     volumes:
       - mariadb:/var/lib/mysql
     expose:
       - "3306"
+    restart: unless-stopped
     env_file: .env
     networks:
       - inception-network
@@ -23,11 +27,13 @@ services:
   wordpress:
     container_name: "wordpress"
     build: ./requirements/wordpress/
+    image: wordpress:inception
     volumes:
       - wordpress:/var/www/html/wordpress
     env_file : .env
     expose:
        - "9000"
+    restart: unless-stopped
     networks:
       - inception-network
     depends_on:
