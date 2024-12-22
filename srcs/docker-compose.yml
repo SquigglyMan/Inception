@@ -3,13 +3,15 @@ services:
     container_name: "nginx"
     build: ./requirements/nginx
     image: nginx:inception
-    expose:
-      - "443"
+    ports:
+      - "443:443"
     volumes:
       - wordpress:/var/www/html/wordpress
     restart: unless-stopped
     networks:
       - inception-network
+    depends_on:
+      - wordpress
 
   mariadb:
     container_name: "mariadb"
@@ -21,6 +23,12 @@ services:
       - "3306"
     restart: unless-stopped
     env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /secrets/db_root_password
+      MYSQL_PASSWORD_FILE: /secrets/db_password
+    secrets:
+      - db_root_password
+      - db_password
     networks:
       - inception-network
 
@@ -31,6 +39,10 @@ services:
     volumes:
       - wordpress:/var/www/html/wordpress
     env_file : .env
+    environment:
+      MYSQL_PASSWORD_FILE: /secrets/db_password
+    secrets:
+      - db_password
     expose:
        - "9000"
     restart: unless-stopped
@@ -56,3 +68,9 @@ volumes:
 networks:
   inception-network:
     driver: bridge
+
+secrets:
+  db_root_password:
+    file: ../secrets/db_root_password.txt
+  db_password:
+    file: ../secrets/db_password.txt
