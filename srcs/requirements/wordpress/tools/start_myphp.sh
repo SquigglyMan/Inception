@@ -27,7 +27,6 @@ wp term create category 'Arts.History.Music' --description='Arts, History and Mu
 
 
 #	Add new posts
-wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='THE SCIENCE BEHIND RAINBOWS' --post_name='the-science-behind-rainbows' --post_category='Science' --post_status=publish 
 wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='SYMBOLS OF HOPE AND PROMISE' --post_name='symbols-of-hope-and-promise' --post_category='Culture.Mythology' --post_status=publish 
 wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='RECOGNIZING METEOROLOGICAL SIGNIFICANCE' --post_name='recognizing-meterological-significance' --post_category='Science' --post_status=publish 
 wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='INSPIRING CREATIVITY' --post_name='inspiring-creativity' --post_category='Arts.Creativity' --post_status=publish 
@@ -37,5 +36,6 @@ wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue 
 wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='HOW RAINBOWS TRANFORM URBAN SPACES' --post_name='how-rainbows-transform-urban-spaces' --post_category='Architecture.Society' --post_status=publish
 wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='A COLORFUL JOURNEY THROUGH THE AGES' --post_name='a-colorful-journey-through-the-ages' --post_category='Arts.History' --post_status=publish
 wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='SINGIN COLORS AND JOY' --post_name='singin-colors-and-joy' --post_category='Arts.History.Music' --post_status=publish
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='THE SCIENCE BEHIND RAINBOWS' --post_name='the-science-behind-rainbows' --post_category='Science' --post_status=publish 
 
 php-fpm7.4 -F -y /etc/php/7.4/fpm/php-fpm.conf
