@@ -14,4 +14,13 @@ wp core install --allow-root --path=/var/www/html/wordpress --url=https://"$DOMA
 wp user create --allow-root --path=/var/www/html/wordpress $WP_USER $WP_EMAIL --user_pass=$WP_PASSWD --role=$WP_USER_ROLE
 wp theme install saaslauncher --allow-root --path=/var/www/html/wordpress --activate
 
+# Add new posts
+
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='THE SCIENCE BEHIND RAINBOWS' --post_name='the-science-behind-rainbows' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='SYMBOLS OF HOPE AND PROMISE' --post_name='symbols-of-hope-and-promise' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='RECOGNIZING METEOROLOGICAL SIGNIFICANCE' --post_name='recognizing-meterological-significance' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='INSPIRING CREATIVITY' --post_name='inspiring-creativity' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='RAINBOW PHENOMENA AROUND THE WORLD' --post_name='rainbow-phenomena-around-the-world' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='DIVERSITY AND IMAGINATION ON LITERATURE' --post_name='diversity-and-imagination-on-literature' --post_status=publish 
+
 php-fpm7.4 -F -y /etc/php/7.4/fpm/php-fpm.conf
