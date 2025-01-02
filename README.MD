@@ -7,8 +7,6 @@ To work on self hosted domain/server/url you need to add it in your localhost fi
 
 ## .env
 ```
-DOMAIN_NAME=llarue.42.fr
-
 # mariadb
 MYSQL_DATABASE=inception_db
 MYSQL_USER=llarue
