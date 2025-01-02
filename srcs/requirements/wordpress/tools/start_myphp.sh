@@ -16,11 +16,11 @@ wp theme install colorstream --allow-root --path=/var/www/html/wordpress --activ
 
 # Add new posts
 
-wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='THE SCIENCE BEHIND RAINBOWS' --post_name='the-science-behind-rainbows' --post_status=publish 
-wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='SYMBOLS OF HOPE AND PROMISE' --post_name='symbols-of-hope-and-promise' --post_status=publish 
-wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='RECOGNIZING METEOROLOGICAL SIGNIFICANCE' --post_name='recognizing-meterological-significance' --post_status=publish 
-wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='INSPIRING CREATIVITY' --post_name='inspiring-creativity' --post_status=publish 
-wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='RAINBOW PHENOMENA AROUND THE WORLD' --post_name='rainbow-phenomena-around-the-world' --post_status=publish 
-wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='DIVERSITY AND IMAGINATION ON LITERATURE' --post_name='diversity-and-imagination-on-literature' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='THE SCIENCE BEHIND RAINBOWS' --post_name='the-science-behind-rainbows' --post_category='Science' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='SYMBOLS OF HOPE AND PROMISE' --post_name='symbols-of-hope-and-promise' --post_category='Culture.Mythology' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='RECOGNIZING METEOROLOGICAL SIGNIFICANCE' --post_name='recognizing-meterological-significance' --post_category='Science' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='INSPIRING CREATIVITY' --post_name='inspiring-creativity' --post_category='Arts.Creativity' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='RAINBOW PHENOMENA AROUND THE WORLD' --post_name='rainbow-phenomena-around-the-world' --post_category='Culture' --post_status=publish 
+wp post create --allow-root --path=/var/www/html/wordpress --post_author=llarue --post_title='DIVERSITY AND IMAGINATION ON LITERATURE' --post_name='diversity-and-imagination-on-literature' --post_category='Arts.Culture' --post_status=publish 
 
 php-fpm7.4 -F -y /etc/php/7.4/fpm/php-fpm.conf
